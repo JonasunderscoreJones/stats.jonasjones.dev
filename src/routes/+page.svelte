@@ -2,7 +2,7 @@
 	import { spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
 
-	let count = 1000;
+	let count = -1;
 
 	const displayed_count = spring();
 	$: displayed_count.set(count);
