@@ -1,6 +1,7 @@
 <script>
 	import { spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
+	import { recordRequest } from './analytics.js';
 
 	let count = -1;
 
@@ -28,6 +29,8 @@
 	onMount(() => {
 		// Fetch initial count
 		fetchCount();
+
+		recordRequest();
 
 		// Update the count every 3 seconds
 		const interval = setInterval(fetchCount, 10000);
